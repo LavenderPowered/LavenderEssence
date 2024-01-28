@@ -80,9 +80,9 @@ public class Settings {
             this.MODE = RunMode.OFFLINE;
             this.VELOCITY_SECRET = "";
 
-            this.TPS = null;
-            this.CHUNK_VIEW_DISTANCE = null;
-            this.ENTITY_VIEW_DISTANCE = null;
+            this.TPS = "20";
+            this.CHUNK_VIEW_DISTANCE = "8";
+            this.ENTITY_VIEW_DISTANCE = "5";
             this.TERMINAL_DISABLED = false;
 
             this.EXTS_COMMAND_FOR_PLAYERS = false;
