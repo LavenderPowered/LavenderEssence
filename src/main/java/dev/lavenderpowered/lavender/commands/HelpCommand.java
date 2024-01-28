@@ -1,6 +1,6 @@
-package dev.andus.bastom.commands;
+package dev.lavenderpowered.lavender.commands;
 
-import dev.andus.bastom.Utils;
+import dev.lavenderpowered.lavender.Utils;
 import net.minestom.server.command.CommandSender;
 import net.minestom.server.command.builder.Command;
 import net.minestom.server.command.builder.CommandContext;

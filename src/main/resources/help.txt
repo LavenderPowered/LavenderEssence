@@ -1,4 +1,4 @@
-§bBastom help:
+§dLavender help:
 §7 - /help - Displays this message
 §7 - /extensions (§8/exts§7 | §8/ext§7) - Displays all loaded extensions
 §7 - /list (§8/ls§7) - Displays all players on the server

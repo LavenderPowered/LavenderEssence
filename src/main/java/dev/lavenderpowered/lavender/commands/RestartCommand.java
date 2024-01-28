@@ -1,12 +1,10 @@
-package dev.andus.bastom.commands;
+package dev.lavenderpowered.lavender.commands;
 
-import dev.andus.bastom.Server;
-import net.hollowcube.minestom.extensions.ExtensionBootstrap;
+import dev.lavenderpowered.lavender.Server;
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.command.ConsoleSender;
 import net.minestom.server.command.ServerSender;
 import net.minestom.server.command.builder.Command;
-import net.minestom.server.extensions.ExtensionManager;
 
 import java.io.IOException;
 

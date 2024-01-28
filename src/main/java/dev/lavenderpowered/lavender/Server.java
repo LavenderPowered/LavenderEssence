@@ -1,32 +1,24 @@
-package dev.andus.bastom;
+package dev.lavenderpowered.lavender;
 
-import dev.andus.bastom.commands.Commands;
-import dev.andus.bastom.commands.Permissions;
+import dev.lavenderpowered.lavender.commands.Commands;
+import dev.lavenderpowered.lavender.commands.Permissions;
 import net.hollowcube.minestom.extensions.ExtensionBootstrap;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
-import net.kyori.adventure.text.logger.slf4j.ComponentLoggerProvider;
 import net.minestom.server.MinecraftServer;
-import net.minestom.server.adventure.MinestomAdventure;
-import net.minestom.server.adventure.provider.MinestomComponentLoggerProvider;
 import net.minestom.server.coordinate.Pos;
-import net.minestom.server.entity.GameMode;
 import net.minestom.server.entity.Player;
 import net.minestom.server.event.GlobalEventHandler;
 import net.minestom.server.event.player.PlayerLoginEvent;
 import net.minestom.server.event.server.ServerListPingEvent;
-import net.minestom.server.extensions.Extension;
-import net.minestom.server.extensions.ExtensionManager;
 import net.minestom.server.extras.MojangAuth;
 import net.minestom.server.extras.bungee.BungeeCordProxy;
 import net.minestom.server.extras.lan.OpenToLAN;
 import net.minestom.server.extras.velocity.VelocityProxy;
-import net.minestom.server.instance.AnvilLoader;
 import net.minestom.server.instance.InstanceContainer;
 import net.minestom.server.instance.InstanceManager;
 import net.minestom.server.instance.block.Block;
 import net.minestom.server.ping.ResponseData;
-import net.minestom.server.thread.MinestomThread;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -153,27 +145,17 @@ public class Server {
                 event.setSpawningInstance(instanceContainer);
                 player.setRespawnPoint(new Pos(0, 5, 0));
             });
-        } else if (Settings.isInstanceEnabled() && Settings.getWorldType() == Settings.WorldType.ANVIL) {
-            InstanceContainer instanceContainer = instanceManager.createInstanceContainer();
-            instanceContainer.setChunkLoader(new AnvilLoader(Settings.getWorldLoc()));
-            GlobalEventHandler globalEventHandler = MinecraftServer.getGlobalEventHandler();
-            globalEventHandler.addListener(PlayerLoginEvent.class, event -> {
-                final Player player = event.getPlayer();
-                event.setSpawningInstance(instanceContainer);
-                // Figure out how to get spawn coordinates
-            });
         } else {
-
+            logger.warn("There is no instance enabled! You can change that in worlds.json file.");
         }
 
         MinecraftServer.getGlobalEventHandler().addListener(PlayerLoginEvent.class, event -> {
             if (instanceManager.getInstances().isEmpty())
                 event.getPlayer().kick(Component.text("There is no instance available!\n" +
-                        "You can enable a basic flat instance in worlds.json using \"FLAT\" as world_type\n" +
-                        "Or use \"ANVIL\" as world_type and load an existing Minecraft world from a folder.", NamedTextColor.RED));
+                        "You can enable a basic flat instance in worlds.json using \"FLAT\" as world_type\n", NamedTextColor.RED));
         });
     }
-    
+
     public static void registerCommands() {
         var commandManager = MinecraftServer.getCommandManager();
         var consoleSender = commandManager.getConsoleSender();

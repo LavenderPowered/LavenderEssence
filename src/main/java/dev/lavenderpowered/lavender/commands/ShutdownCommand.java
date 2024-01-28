@@ -1,4 +1,4 @@
-package dev.andus.bastom.commands;
+package dev.lavenderpowered.lavender.commands;
 
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.command.ServerSender;

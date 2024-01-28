@@ -1,4 +1,4 @@
-package dev.andus.bastom;
+package dev.lavenderpowered.lavender;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

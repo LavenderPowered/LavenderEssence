@@ -1,4 +1,4 @@
-package dev.andus.bastom;
+package dev.lavenderpowered.lavender;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -93,12 +93,10 @@ public class Settings {
     private static class WorldsState {
         private final boolean ENABLE_INSTANCE;
         private final WorldType WORLD_TYPE;
-        private final String WORLD_LOC;
 
         private WorldsState() {
             this.ENABLE_INSTANCE = false;
             this.WORLD_TYPE = WorldType.FLAT;
-            this.WORLD_LOC = "path/to/your/world";
         }
     }
 
@@ -121,8 +119,7 @@ public class Settings {
     }
 
     public enum WorldType {
-        FLAT("flat"),
-        ANVIL("anvil");
+        FLAT("flat");
 
         private final String name;
 
@@ -166,5 +163,4 @@ public class Settings {
 
     public static boolean isInstanceEnabled() { return currentWorlds.ENABLE_INSTANCE; }
     public static WorldType getWorldType() { return currentWorlds.WORLD_TYPE; }
-    public static String getWorldLoc() { return currentWorlds.WORLD_LOC; }
 }

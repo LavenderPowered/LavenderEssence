@@ -4,9 +4,9 @@ plugins {
     java
 }
 
-var displayName = "Bastom"
+var displayName = "Lavender"
 
-group = "dev.andus.bastom"
+group = "dev.lavenderpowered.lavender"
 version = "1.0.0"
 
 dependencies {
@@ -34,7 +34,7 @@ tasks {
 
     shadowJar {
         manifest {
-            attributes("Main-Class" to "dev.andus.bastom.Server")
+            attributes("Main-Class" to "dev.lavenderpowered.lavender.Server")
         }
         archiveBaseName.set(displayName)
         archiveClassifier.set("")

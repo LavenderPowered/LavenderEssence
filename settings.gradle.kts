@@ -12,5 +12,5 @@ pluginManagement {
     }
 }
 
-rootProject.name = "bastom"
+rootProject.name = "lavender"
 
