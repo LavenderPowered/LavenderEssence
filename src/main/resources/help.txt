@@ -1,0 +1,7 @@
+§bBastom help:
+§7 - /help - Displays this message
+§7 - /extensions (§8/exts§7 | §8/ext§7) - Displays all loaded extensions
+§7 - /list (§8/ls§7) - Displays all players on the server
+§7 - /serverinfo (§8/svinfo§7) - Displays server information
+§e - /restart - Restarts the server
+§c - /shutdown (§4/stop §c| §4/end§c) - Stops the server
