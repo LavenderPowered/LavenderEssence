@@ -118,7 +118,9 @@ public class Server {
         globalEventHandler.addListener(ServerListPingEvent.class, event -> {
             ResponseData responseData = event.getResponseData();
             responseData.setDescription(Utils.readFromFile("motd.txt", "§7A §d§lLavender §7Server!"));
-            if (Settings.getServerListPlayers() == Settings.ServerListPlayers.HIDE) {
+            if (Settings.getServerListPlayers() == Settings.ServerListPlayers.SHOW) {
+                responseData.addEntries(MinecraftServer.getConnectionManager().getOnlinePlayers());
+            } else if (Settings.getServerListPlayers() == Settings.ServerListPlayers.HIDE) {
                 responseData.setPlayersHidden(true);
             }
         });
