@@ -2,7 +2,7 @@ metadata.format.version = "1.1"
 
 [versions]
 
-minestom = "1554487748"
+minestom = "82725b5e32"
 minestomext = "1.2.0"
 slf4j = "2.0.11"
 jlineterm = "3.25.1"
@@ -14,7 +14,7 @@ shadowJar = "7.0.0"
 
 [libraries]
 
-minestom = { group = "dev.hollowcube", name = "minestom-ce", version.ref = "minestom" }
+minestom = { group = "net.minestom", name = "minestom-snapshots", version.ref = "minestom" }
 minestomext = { group = "dev.hollowcube", name = "minestom-ce-extensions", version.ref = "minestomext" }
 slf4j = { group = "org.slf4j", name = "slf4j-simple", version.ref = "slf4j" }
 jlineterm = { group = "org.jline", name = "jline-terminal", version.ref = "jlineterm" }
